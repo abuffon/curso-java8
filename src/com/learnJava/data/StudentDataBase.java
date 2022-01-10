@@ -2,8 +2,13 @@ package com.learnJava.data;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class StudentDataBase {
+
+    public static Supplier<Student> studentSupplier = () -> {
+       return new Student("Adam",2,3.6, "male",Arrays.asList("swimming", "basketball","volleyball"));
+    };
 
     /**
      * Total of 6 students in the database.
@@ -30,4 +35,5 @@ public class StudentDataBase {
         List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6);
         return students;
     }
+
 }
