@@ -12,10 +12,21 @@ public class StreamsFlatMapExample {
 		return StudentDataBase.getAllStudents().stream() //Stream<Student>
 			.map(Student::getActivities) //Stream<List<String>>
 			.flatMap(List::stream) //Stream<String>
+			.distinct()
+			.sorted()
 			.collect(Collectors.toList());
+	}
+	
+	public static Long getStudentActivitiesCount() {
+		return StudentDataBase.getAllStudents().stream() //Stream<Student>
+			.map(Student::getActivities) //Stream<List<String>>
+			.flatMap(List::stream) //Stream<String>
+			.distinct()
+			.count();
 	}
 	
 	public static void main(String[] args) {
 		System.out.println(printStudentActivities());
+		System.out.println(getStudentActivitiesCount());
 	}
 }
