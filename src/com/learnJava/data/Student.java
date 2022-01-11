@@ -9,8 +9,27 @@ public class Student {
     private double gpa;
     private String gender;
     List<String> activities = new ArrayList<>();
+    private int notenook;
 
-    public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities) {
+    public int getNotenook() {
+		return notenook;
+	}
+
+	public void setNotenook(int notenook) {
+		this.notenook = notenook;
+	}
+
+	public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities, int notenook) {
+		super();
+		this.name = name;
+		this.gradeLevel = gradeLevel;
+		this.gpa = gpa;
+		this.gender = gender;
+		this.activities = activities;
+		this.notenook = notenook;
+	}
+
+	public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities) {
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.gpa = gpa;
